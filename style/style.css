@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f173d;
+
+    font-family: Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 15px;
+}
+
+.letter {
+    background-color: #172554;
+    color: white;
+
+    padding: 45px;
+    width: 600px;
+    max-width: 100%;
+
+    line-height: 1.9;
+
+    border: 1px solid #F2A65A;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+
+    border-radius: 3px;
+}
+
+.letter p:first-child {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.kirsten {
+    display: inline-block;
+    color: #F6DFA8;
+    font-weight: bold;
+
+    transition: opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.kirsten.fade {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.end {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.ezekiel {
+    display: inline-block;
+    color: #F6DFA8;
+    font-style: italic;
+    font-weight: bold;
+
+    transition: opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.ezekiel.fade {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.kirsten, .ezekiel {
+    text-shadow: 0 0 12px rgba(242, 166, 90, 0.25);
+}
+
