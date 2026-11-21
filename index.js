@@ -23,11 +23,17 @@ function rotateText(selector, words) {
     }, 3000);
 }
 
+
 const openButton = document.getElementById("openLetter");
 const intro = document.getElementById("intro");
 const curtains = document.getElementById("curtains");
 const letter = document.getElementById("letter");
 const music = document.getElementById("backgroundMusic");
+
+const finalStarContainer = document.getElementById("finalStarContainer");
+const finalStar = document.getElementById("finalStar");
+const finalMessage = document.getElementById("finalMessage");
+
 
 openButton.addEventListener("click", () => {
 
@@ -43,7 +49,6 @@ openButton.addEventListener("click", () => {
     }, 1000);
 
 
-    // Start background music
     music.volume = 0;
     music.currentTime = 0;
 
@@ -69,30 +74,49 @@ openButton.addEventListener("click", () => {
         console.error("Music playback failed:", error);
     });
 
-    // Start randomized text after the reveal
     setTimeout(() => {
 
+        rotateText(".kirsten", [
+            "Kirsten",
+            "my dearest one of all",
+            "my sweet beloved",
+            "my honey",
+            "my baby girl",
+            "my queen",
+            "my cutie patootie"
+        ]);
 
-    rotateText(".kirsten", [
-        "Kirsten",
-        "my dearest one of all",
-        "my sweet beloved",
-        "my honey",
-        "my baby girl",
-        "my queen",
-        "my cutie patootie"
-    ]);
-
-    rotateText(".ezekiel", [
-        "Ezekiel",
-        "your dearest",
-        "your love",
-        "your cutiepie",
-        "your beautiful princess with a disorder",
-        "Ryan Gosling",
-
-    ]);
+        rotateText(".ezekiel", [
+            "Ezekiel",
+            "your dearest",
+            "your love",
+            "your cutiepie",
+            "your beautiful princess with a disorder",
+            "Ryan Gosling"
+        ]);
 
     }, 1800);
+
+    setTimeout(() => {
+        finalStarContainer.classList.add("visible");
+    }, 30000);
+
+});
+
+
+finalStar.addEventListener("click", () => {
+
+    finalStar.disabled = true;
+
+    letter.style.transition =
+        "opacity 1.5s ease, transform 1.5s ease";
+
+    letter.style.opacity = "0";
+    letter.style.transform = "scale(0.95)";
+
+    // Reveal final message
+    setTimeout(() => {
+        finalMessage.classList.add("show");
+    }, 800);
 
 });
